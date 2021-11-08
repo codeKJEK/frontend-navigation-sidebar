@@ -44,7 +44,7 @@ function minifyJs() {
     return src("dist/js/scripts.js")
         .pipe(uglify())
         .pipe(rename({suffix: ".min"}))
-        .pipe(dest("dist"));
+        .pipe(dest("dist/js"));
 };
 
 function optimizeImg() {
@@ -57,7 +57,7 @@ function optimizeImg() {
 }
 
 function launchServer() {
-    return src("../frontend")
+    return src("../navigation-sidebar-frontend")
         .pipe(webserver({
             livereload: true,
             port: "4000",

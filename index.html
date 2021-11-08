@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOXICON -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="dist/css/style.min.css">
-    <title>Document</title>
+    <title>Sidebar Navigation</title>
 </head>
-<body>
-    <h1>Hello world</h1>
-    <script src="dist/js/scripts.min.css"></script>
+<body id="app-home">
+    <a href="#app-content" class="cta skip-app-banner">skip to main content</a>
+    <header class="app-banner" aria-labelledby="aria-heading">
+        <div class="app-banner__container">
+            <button class="btn app-banner__menu-button" title="expand menu" aria-haspopup="true" aria-expanded="false">
+                <i class="bx bx-menu app-banner__menu-icon" ></i>
+            </button>
+            <h1 class="app-banner__heading" id="banner-heading">company name</h1>
+        </div>
+        <nav class="app-banner__navigation" aria-label="main navigation">
+            <ul class="list app-banner__menu">
+                <li class="app-banner__item" role="none">
+                    <a href="#app-home" class="cta app-banner__menuitem">
+                        <i class="bx bx-home-alt app-banner__menuitem-icon" ></i>
+                        <span class="app-banner__menuitem-text">home</span>
+                    </a>
+                </li>
+                <li class="app-banner__item" role="none">
+                    <a href="#about" class="cta app-banner__menuitem">
+                        <i class="bx bx-user app-banner__menuitem-icon" ></i>
+                        <span class="app-banner__menuitem-text">about</span>
+                    </a>
+                </li>
+                <li class="app-banner__item" role="none">
+                    <a href="#location" class="cta app-banner__menuitem">
+                        <i class="bx bx-location-plus app-banner__menuitem-icon" ></i>
+                        <span class="app-banner__menuitem-text">location</span>
+                    </a>
+                </li>
+                <li class="app-banner__item" role="none">
+                    <a href="#contact" class="cta app-banner__menuitem">
+                        <i class="bx bx-message app-banner__menuitem-icon" ></i>
+                        <span class="app-banner__menuitem-text">contact</span>
+                    </a>
+                </li>
+                <li class="app-banner__item" role="none">
+                    <button class="btn app-banner__menuitem" id="mode-button">
+                        <i class="bx bx-moon app-banner__menuitem-icon"></i>
+                        <span class="app-banner__menuitem-text">dark mode</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="app-content" tabindex="-1">
+        <section id="hero" aria-labelledby="hero-heading" tabindex="-1">
+            <h2 id="hero-heading">Value Proposition</h2>
+        </section>
+        <section id="about" aria-labelledby="about-heading" tabindex="-1">
+            <h3 id="about-heading">About</h3>
+        </section>
+        <section id="location" aria-labelledby="location-heading" tabindex="-1">
+            <h4 id="location-heading">Location</h5>
+        </section>
+        <section id="contact" aria-labelledby="contact-heading" tabindex="-1">
+            <h5 id="contact-heading">Contact</h4>
+        </section>
+    </main>
+
+    <script src="dist/js/scripts.min.js"></script>
 </body>
 </html>

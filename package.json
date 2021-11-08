@@ -1,14 +1,14 @@
 {
-  "name": "frontend",
+  "name": "navigation-sidebar-frontend",
   "version": "1.0.0",
-  "description": "Frontend Quick Start",
+  "description": "Responsive navigation sidebar",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codeKJEK/frontend.git"
+    "url": "git+https://github.com/codeKJEK/navigation-sidebar-frontend.git"
   },
   "keywords": [
     "frontend",
@@ -16,14 +16,15 @@
     "sass",
     "css",
     "javascript",
-    "gulp"
+    "gulp",
+    "sidebar"
   ],
   "author": "Kurtis Kovel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codeKJEK/frontend/issues"
+    "url": "https://github.com/codeKJEK/navigation-sidebar-frontend/issues"
   },
-  "homepage": "https://github.com/codeKJEK/frontend#readme",
+  "homepage": "https://github.com/codeKJEK/navigation-sidebar-frontend#readme",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
