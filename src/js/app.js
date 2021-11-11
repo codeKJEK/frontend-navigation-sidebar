@@ -74,7 +74,6 @@ window.addEventListener("DOMContentLoaded", () => {
         };
     });
     menuButton.addEventListener("click", () => {
-        console.log(menuButton.getAttribute("aria-expanded"))
         if (menuButton.getAttribute("aria-expanded") == "false") {
             expandMenu();
         } else if (menuButton.getAttribute("aria-expanded") == "true") {
