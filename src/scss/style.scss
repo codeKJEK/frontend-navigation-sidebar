@@ -1,49 +1,63 @@
+// VARIABLES
+// color
+$color-lightest: #f2f2f2;
+$color-darkest: #0d0d0d;
+$color-banner: #d9d9d9;
+$color-banner-dark: #262626;
+$color-midtone: #808080;
+// height
+$height-menuitem: 3.5rem;
+// width
+$width-banner: 3rem;
+$width-banner-expanded: 11.5rem;
+$width-menuitem: 3.5rem;
+$width-max: 1024px;
+// gap
+$gap-menuitem: .75rem;
+$gap-list: 1.5rem;
+$gap-list-desktop: 1.75rem;
+// padding
+$padding-landmark: 1rem;
+$padding-banner: .5rem;
+$padding-menuitem: .75rem;
+$padding-menuitem-large: 1rem;
+// margin
+$margin-main: $width-banner + ($padding-menuitem * 2);
+$margin-main-compact: $width-banner-expanded + ($padding-menuitem * 2);
+// font-size
+$size-menuitem: .75em; 
+$size-menuitem-desktop: .9em; 
+$size-icon: 1.5em;
+$size-company-name: 1em;
+$size-phone: .9em;
+// transition
+$transition-banner: width .5s ease-in; 
+$transition-menuitem: opacity .25s ease-in; 
+$transition-main: margin .5s ease-in; 
+// breakpoints
+$breakpoint-landscape: 330px;
+$breakpoint-desktop: 769px;
+$breakpoint-desktop-large: 1025px;
 
-$logo-size: 2em;
-$logo-padding: .25rem;
-
-
+// GLOBAL
 html, body {
     margin: 0;
     padding: 0;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    background-color: #f2f2f2;
-    color: #0d0d0d;
+    background-color: $color-lightest;
+    color: $color-darkest;
 }
-
-.cta {
-    text-decoration: none;
-    color: inherit;
-}
-
-.btn {
-    border: none;
-    background: transparent;
-    font-size: inherit;
-    font-family: inherit;
-    padding: 0;
-    cursor: pointer;
-    color: inherit;
-}
-
-.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
+// SKIP TO MAIN CONTENT
 .skip-app-banner {
     display: block;
     text-align: center;
-    padding: 1rem 0;
+    padding: $padding-landmark 0;
     color: inherit;
     text-transform: capitalize;
     position: absolute;
@@ -54,15 +68,36 @@ body {
         margin: .1rem;    
     }
 }
+// APP BANNER
 .app-banner {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 3rem;
+    width: $width-banner;
     overflow: hidden;
-    background-color: #d3d3d3;
-    transition: width .5s ease-in;
+    background-color: $color-banner;
+    transition: $transition-banner;
+    .cta {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .btn {
+        border: none;
+        background: transparent;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 0;
+        cursor: pointer;
+        color: inherit;
+    }
+    
+    .list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
     &__container {
         margin-top: .65rem;
     }
@@ -71,21 +106,21 @@ body {
         align-items: center;
     }
     &__menu-icon {
-        font-size: 1.5em;
-        padding: .75rem;
+        font-size: $size-icon;
+        padding: $padding-menuitem;
     }
     &__heading {
-        font-size: 1em;
+        font-size: $size-company-name;
     }
-    &__menuitem {
-        column-gap: .75rem;
-        padding: .75rem 0 .75rem .75rem;
+    &__menuitem, &__menuitem.btn {
+        column-gap: $gap-menuitem;
+        padding: $padding-menuitem 0 $padding-menuitem $padding-menuitem;
     }
     &__menuitem.btn {
         width: 100%;
     }
     &__menuitem-icon {
-        font-size: 1.5em;
+        font-size: $size-icon;
     }
     &__menu-button, &__menuitem-icon{
         &:active {
@@ -98,14 +133,14 @@ body {
     &__heading, &__menuitem-text {
         white-space: nowrap;
         opacity: 0;
-        transition: opacity .25s ease-in;
+        transition: $transition-menuitem;
     }
     &__heading.visible, &__menuitem-text.visible {
         opacity: 1;
-        transition: opacity .25s ease-in .5s;
+        transition: $transition-menuitem .5s;
     }
     &.expanded {
-        width: 11.5rem;
+        width: $width-banner-expanded;
     }    
 }
 
@@ -127,13 +162,13 @@ body {
 }
 
 main {
-    margin-left: 3rem;
-    transition: margin .5s ease-in;
+    margin-left: $width-banner;
+    transition: $transition-main;
     &.compact {
-        margin-left: 11.5rem;
+        margin-left: $width-banner-expanded;
     }
     section {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem $padding-landmark;
         height: 100vh;
         h2, h3, h4, h5 {
             margin: 0;
@@ -143,17 +178,17 @@ main {
 
 
 
-@media screen and (min-height: 330px) {
+@media screen and (min-height: $breakpoint-landscape) {
     .app-banner {
-        &__menuitem {
-            padding: 1rem 0 1rem .75rem;
+        &__menuitem, &__menuitem.btn {
+            padding: $padding-menuitem-large 0 $padding-menuitem-large $padding-menuitem;
         }
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $breakpoint-desktop) {
     .app-banner{
-        padding: 1rem .5rem;
+        padding: $padding-landmark $padding-banner;
         &__menuitem, &__container {
             position: relative;
             transform: perspective(1px) translateZ(0);
@@ -179,12 +214,12 @@ main {
         
     }
     main {
-        margin-left: 5rem;
+        margin-left: $margin-main;
         &.compact {
             margin-left: 13.5rem;
         }
         section {
-            padding: 2.5rem 1rem;
+            padding: 2.5rem $padding-landmark;
         }
     }
 }

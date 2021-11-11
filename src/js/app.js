@@ -9,6 +9,8 @@ window.addEventListener("DOMContentLoaded", () => {
     expandMenu = () => {
         menuButton.setAttribute("aria-expanded", "true");
         menuButton.setAttribute("title", "collapse menu");
+        menuButton.querySelector(".bx").classList.remove("bx-menu");
+        menuButton.querySelector(".bx").classList.add("bxs-chevron-left");
         appBanner.classList.add("expanded");
         bannerText.forEach(text => text.classList.add("visible"))
         if(window.innerWidth > 641) {
@@ -18,6 +20,8 @@ window.addEventListener("DOMContentLoaded", () => {
     compactMenu = () => {
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.setAttribute("title", "expand menu");
+        menuButton.querySelector(".bx").classList.remove("bxs-chevron-left");
+        menuButton.querySelector(".bx").classList.add("bx-menu");
         appBanner.classList.remove("expanded");
         bannerText.forEach(text => text.classList.remove("visible"));
         if(window.innerWidth > 641) {
@@ -43,8 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
         appContent.classList.remove("compact");
     };
     if(window.innerWidth > 769) {
-       expandMenu();
-       compactContent();
+        expandMenu();
+        compactContent();
     }
     bannerCta.forEach(cta => {
         cta.addEventListener("click", () => {

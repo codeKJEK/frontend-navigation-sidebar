@@ -11,6 +11,8 @@ window.addEventListener("DOMContentLoaded", function () {
       expandMenu = function expandMenu() {
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("title", "collapse menu");
+    menuButton.querySelector(".bx").classList.remove("bx-menu");
+    menuButton.querySelector(".bx").classList.add("bxs-chevron-left");
     appBanner.classList.add("expanded");
     bannerText.forEach(function (text) {
       return text.classList.add("visible");
@@ -23,6 +25,8 @@ window.addEventListener("DOMContentLoaded", function () {
       compactMenu = function compactMenu() {
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("title", "expand menu");
+    menuButton.querySelector(".bx").classList.remove("bxs-chevron-left");
+    menuButton.querySelector(".bx").classList.add("bx-menu");
     appBanner.classList.remove("expanded");
     bannerText.forEach(function (text) {
       return text.classList.remove("visible");
