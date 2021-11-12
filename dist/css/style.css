@@ -14,6 +14,11 @@ body {
   color: #0d0d0d;
 }
 
+@media screen and (min-width: 769px) {
+  body {
+    font-size: 18px;
+  }
+}
 .skip-app-banner {
   display: block;
   text-align: center;
@@ -38,6 +43,9 @@ body {
   overflow: hidden;
   background-color: #d9d9d9;
   transition: width 0.5s ease-in;
+}
+.app-banner.expanded {
+  width: 11.5rem;
 }
 .app-banner .cta {
   text-decoration: none;
@@ -96,9 +104,6 @@ body {
   opacity: 1;
   transition: opacity 0.25s ease-in 0.5s;
 }
-.app-banner.expanded {
-  width: 11.5rem;
-}
 
 @keyframes active-push {
   50% {
@@ -140,6 +145,9 @@ main section h2, main section h3, main section h4, main section h5 {
   .app-banner {
     padding: 1rem 0.5rem;
   }
+  .app-banner.expanded {
+    width: 12.5rem;
+  }
   .app-banner__menuitem, .app-banner__container {
     position: relative;
     transform: perspective(1px) translateZ(0);
@@ -153,7 +161,7 @@ main section h2, main section h3, main section h4, main section h5 {
     right: 0;
     bottom: 0;
     height: 4px;
-    background: gray;
+    background: #808080;
     transform: translateY(4px);
     transition-property: transform;
     transition-duration: 0.3s;
@@ -167,7 +175,7 @@ main section h2, main section h3, main section h4, main section h5 {
     margin-left: 4.5rem;
   }
   main.compact {
-    margin-left: 13.5rem;
+    margin-left: 14.5rem;
   }
   main section {
     padding: 2.5rem 1rem;
